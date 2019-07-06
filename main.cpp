@@ -25,7 +25,7 @@ int main() {
     float a{0.75};
     size_t i;
     float r = 200; //sensor's noise
-    
+
     std::vector<double> x_k(10);    // The real values
     std::vector<double> z_k(10);    // The observations
     std::vector<double> p_k(10);    // The prediction error

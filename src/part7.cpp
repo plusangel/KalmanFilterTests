@@ -1,12 +1,10 @@
 #include <iostream>
 #include <iomanip>
-#include <algorithm>
 #include <vector>
 #include <chrono>
-
 #include <random>
 
-#include "include/matplotlibcpp.h"
+#include "../include/matplotlibcpp.h"
 
 namespace plt = matplotlibcpp;
 

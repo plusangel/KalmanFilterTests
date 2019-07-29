@@ -43,8 +43,8 @@ int main() {
     std::vector<double> u_k(v_size);    // The control signal
     std::vector<double> v_k(v_size);    // The noise signal
 
-    // initialisation
-    for (i = 0, x_k[0] = 1000, z_k[0] = 1000 + sensor_noise(r); i < v_size; ++i) {
+    // initialisation of x_k(real values), v_k(noise), z_k(observations)
+    for (i = 0, x_k[0] = 1000, z_k[0] = 1000+sensor_noise(r); i<(v_size-1); ++i) {
         u_k[i] = i;
         v_k[i] = sensor_noise(r);
 
@@ -60,7 +60,7 @@ int main() {
 
 
     // Kalman filter
-    for (p_k[0] = 1.0, x_hat[0] = z_k[0], i = 0; i < x_k.size(); i++) {
+    for (p_k[0] = 1.0, x_hat[0] = z_k[0], i = 0; i<(v_size-1); ++i) {
         //predict
         x_hat[i + 1] = a * x_hat[i] + b * u_k[i + 1];
         p_k[i + 1] = a * p_k[i] * a;
